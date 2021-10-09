@@ -1,0 +1,73 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+// Vars
+$accent-red: #c81b27;
+$off-white: #f2f3f4;
+$main-black: #111111;
+$card-black: #1e1e1e;
+$detail-black: #181818;
+$alter-card-black: #1e1e1e;
+$transition-time: all 0.3s ease-out;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  background-color: $main-black;
+  position: relative;
+  overflow-x: hidden;
+  height: 100vh;
+  overflow-y: hidden;
+  &.web-open {
+    overflow-y: auto;
+    height: auto;
+  }
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+// ******************Imports
+// Navbar
+@import "./Navbar.scss";
+
+// Drop
+@import "./Drop.scss";
+
+// Hero
+@import "./Hero.scss";
+
+// About
+@import "./About.scss";
+
+// Portfolio
+@import "./Portfolio.scss";
+
+// Contact
+@import "./Contact.scss";
+
+// PopUp
+@import "./PopUp.scss";
+
+// Loader
+@import "./Loader.scss";
+
+// Footer
+@import "./Footer.scss";

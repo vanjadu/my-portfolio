@@ -1,0 +1,177 @@
+.pop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 101;
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -10;
+    &.back-active {
+      pointer-events: all;
+      background-color: #111111da;
+    }
+  }
+  &__popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 80%;
+    background-color: green;
+    display: none;
+    z-index: 99999;
+    pointer-events: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 12px;
+      background-color: $off-white;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+    &.show {
+      display: flex;
+      pointer-events: all;
+    }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $accent-red;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 12px #0005;
+  }
+  &__form-title {
+    color: $off-white;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+  }
+  &__form-desc {
+    color: $off-white;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  &__form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__input {
+    margin: 0.5rem 0;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: $main-black;
+    text-align: center;
+    &::placeholder {
+      color: $detail-black;
+    }
+    &:focus {
+      background-color: $main-black;
+      color: $off-white;
+      box-shadow: 2px 2px 12px #0003;
+      &::placeholder {
+        color: #fafafa;
+      }
+    }
+  }
+  &__text-area {
+    margin: 0.5rem 0;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: $main-black;
+    resize: none;
+    text-align: center;
+    &::placeholder {
+      color: $detail-black;
+    }
+    &:focus {
+      background-color: $main-black;
+      color: $off-white;
+      box-shadow: 2px 2px 12px #0003;
+      &::placeholder {
+        color: #fafafa;
+      }
+    }
+  }
+  &__btn {
+    margin-top: 2rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: $off-white;
+    color: $main-black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: $transition-time;
+    &:hover {
+      color: $off-white;
+      background-color: $main-black;
+      transform: translateY(5px);
+      box-shadow: 2px 2px 12px #0005;
+    }
+  }
+  &__exit {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $off-white;
+    font-size: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $off-white;
+    cursor: pointer;
+    transition: $transition-time;
+    &:hover {
+      color: $main-black;
+      border: 2px solid $main-black;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pop-container {
+    &__popup {
+      width: 80%;
+      height: 75%;
+    }
+    &__form-desc {
+      text-align: center;
+    }
+  }
+}
